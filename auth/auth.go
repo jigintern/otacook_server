@@ -23,8 +23,8 @@ http.Error(w, "Not authorized", 401)
 return
 }
 // 認証されれば"Authed!!"を返す.
-fmt.Fprintf(w, "Authed!!")
+	_, _ = fmt.Fprintf(w, "Authed!!")
 },
 )
-http.ListenAndServe(":18888", nil)
+	_ = http.ListenAndServe(":18888", nil)
 }
