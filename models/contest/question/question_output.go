@@ -8,7 +8,7 @@ import (
 
 func main() {
 	// dbにアクセス
-	db, err := sql.Open("mysql", "root:@tcp(localhost:3306)/questionsdb ")
+	db, err := sql.Open("mysql", "root:@tcp(localhost:3306)/questionsdb")
 	// エラーハンドリング
 	err = db.Ping()
 	if err != nil {
