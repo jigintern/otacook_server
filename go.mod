@@ -1,5 +1,5 @@
-module github.com/nabe1005/jig_intern_server_prac
+module m
 
-go 1.12
+go 1.13
 
-require github.com/jinzhu/gorm v1.9.10 // indirect
+require github.com/gin-gonic/gin v1.4.0
