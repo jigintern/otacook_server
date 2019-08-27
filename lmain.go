@@ -13,7 +13,7 @@ func main() {
 	user := router.Group("/user")
 	{
 		user.POST("/signup", routes.UserSignUp)
-	user.POST("/login", routes.UserLogIn)
+		user.POST("/login", routes.UserLogIn)
 	}
 
 	router.GET("/", routes.Home)

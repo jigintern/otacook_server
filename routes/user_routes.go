@@ -3,7 +3,28 @@ package routes
 import (
 	"github.com/gin-gonic/gin"
 	"net/http"
+	"strconv"
+	// "m/models/contest/answer"
 )
+
+func UserAnswer(ctx *gin.Context) {
+	qi, _ := strconv.Atoi(ctx.PostForm("questionid"))
+	ui, _ := strconv.Atoi(ctx.PostForm("userid"))
+	cn := ctx.PostForm("cookingname")
+	co := ctx.PostForm("cookingoutline")
+
+	println("Answee_post")
+	println(qi)
+	println(ui)
+	println(cn)
+	println(co)
+
+
+	// answer.InsertAns(qi, ui, cn, co)
+	ctx.Redirect(http.StatusSeeOther, "//localhost:8080/")
+}
+
+
 
 func UserSignUp(ctx *gin.Context) {
 	println("post/signup")

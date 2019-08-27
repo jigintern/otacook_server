@@ -9,6 +9,10 @@ func Home(ctx *gin.Context) {
 	ctx.HTML(http.StatusOK, "index.html", gin.H{})
 }
 
+func Answer(ctx *gin.Context) {
+	ctx.HTML(http.StatusOK, "answer.html", gin.H{})
+}
+
 func LogIn(ctx *gin.Context) {
 	ctx.HTML(http.StatusOK, "login.html", gin.H{})
 }
