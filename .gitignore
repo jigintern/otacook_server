@@ -1,6 +1,6 @@
 .env
 docker/db/data
-docker/db/log
+docker/log
 # Added by gemignore. Snippet 'Go'
 # Binaries for programs and plugins
 *.exe
