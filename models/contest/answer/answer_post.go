@@ -1,4 +1,4 @@
-package main
+package answer
 
 import(
 	"time"
@@ -6,28 +6,34 @@ import(
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 )
 
+// Model is DB default data
 type Model struct {
-	Id	int `gorm:"primary_key" json:"id"`
+	AnswerID	int `gorm:"primary_key"`
 	CreatedAt time.Time
 	UpdatedAt time.Time
 }
 
+// Answer is answers  data
 type Answer struct {
 	Model
-	Cooking_name string
+	QuestionID int `gorm:"not null"`
+	UserID int `gorm:"not null"`
+	CookingName string `gorm:"not null"`
+	CookingOutline string `gorm:"type:text;not null"`
 }
 
-func main() {
+func InsertAns(qi int, ui int, cn string, co string) {
 	db := GetDBConn()
 
 	// テーブルの作成
 	db.AutoMigrate(&Answer{})
 
 	// insert into answers
-	name := Answer{Cooking_name: "肉じゃが"}
+	name := Answer { QuestionID: qi, UserID: ui, CookingName: cn, CookingOutline: co }
 	db.Create(&name)
 }
 
+// GetDBConn is the function that connects to the DB
 func GetDBConn() *gorm.DB {
 	db, err := gorm.Open(GetDBConfig())
 	if err != nil {
@@ -38,6 +44,7 @@ func GetDBConn() *gorm.DB {
 	return db
 }
 
+// GetDBConfig is the function that enter the DB config.
 func GetDBConfig() (string, string) {
 	DBMS := "mysql"
 	USER := "root"
