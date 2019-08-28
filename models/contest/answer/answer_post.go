@@ -28,6 +28,6 @@ func InsertAns(qi int, ui int, cn string, co string) {
 	db.AutoMigrate(&Answer{})
 
 	// insert into answers
-	name := Answer { QuestionID: qi, UserID: ui, CookingName: cn, CookingOutline: co }
+	name := Answer{ QuestionID: qi, UserID: ui, CookingName: cn, CookingOutline: co }
 	db.Create(&name)
 }
