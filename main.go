@@ -4,7 +4,7 @@ import (
 	//"fmt"
 	"github.com/gin-gonic/gin"
 	"m/routes"
-	// "m/models/contest/answer"
+	//"m/models/contest/answer"
 )
 
 func main() {
@@ -28,21 +28,18 @@ func main() {
 
 	router.Run(":8080")
 
-	// var qi, ui int
-	// var cn, co string
-	// fmt.Print("qi=")
-	// fmt.Scan(&qi)
-	// fmt.Print("ui=")
-	// fmt.Scan(&ui)
-	// fmt.Print("cn=")
-	// fmt.Scan(&cn)
-	// fmt.Print("co=")
-	// fmt.Scan(&co)
+	/*
+	var qi, ui int
+	var cn, co string
+	fmt.Print("qi=")
+	fmt.Scan(&qi)
+	fmt.Print("ui=")
+	fmt.Scan(&ui)
+	fmt.Print("cn=")
+	fmt.Scan(&cn)
+	fmt.Print("co=")
+	fmt.Scan(&co)
 
-	// router := gin.Default()
-	// router.LoadHTMLGlob("views/*.html")
-	// routar.Static("/assets", "./assets")
-	// router.GET("/", func(c *gin.Context) {
-
-	// answer.InsertAns(qi, ui, cn, co)
+	answer.InsertAns(qi, ui, cn, co)
+	*/
 }

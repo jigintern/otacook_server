@@ -2,9 +2,9 @@ package routes
 
 import (
 	"github.com/gin-gonic/gin"
+	"m/models/contest/answer"
 	"net/http"
 	"strconv"
-	// "m/models/contest/answer"
 )
 
 func UserAnswer(ctx *gin.Context) {
@@ -13,14 +13,14 @@ func UserAnswer(ctx *gin.Context) {
 	cn := ctx.PostForm("cookingname")
 	co := ctx.PostForm("cookingoutline")
 
-	println("Answee_post")
+	println("Answer_post")
 	println(qi)
 	println(ui)
 	println(cn)
 	println(co)
 
 
-	// answer.InsertAns(qi, ui, cn, co)
+	answer.InsertAns(qi, ui, cn, co)
 	ctx.Redirect(http.StatusSeeOther, "//localhost:8080/")
 }
 
