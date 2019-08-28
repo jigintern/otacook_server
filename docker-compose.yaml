@@ -7,9 +7,9 @@ services:
     depends_on:
       - db
     ports:
-      - 5000:5000
+      - 8080:8080
     environment:
-      PORT: "5000"
+      PORT: "8080"
     tty: true
     volumes:
       - ".:/go/src/github.com/jigintern/otacook_server"

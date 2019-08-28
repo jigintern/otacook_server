@@ -1,0 +1,18 @@
+{{ template "head" }}
+<body>
+<article>
+    Please Input answer
+    <form class="answer-post" action="//localhost:8080/answer/insert" method="post">
+        <label>QuestionID</label><br>
+        <input type="number" name="questionid" value="1"><br>
+        <label>UserID</label><br>
+        <input type="number" name="userid" value="1"><br>
+        <label>CookingName</label><br>
+        <input type="text" name="cookingname"><br>
+        <label>CookingOutline</label><br>
+        <input type="text" name="cookingoutline"><br>
+        <input type="submit" value="送信">
+    </form>
+    <article>
+</body>
+{{ template "foot" }}
