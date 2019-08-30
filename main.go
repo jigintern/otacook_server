@@ -4,7 +4,7 @@ import (
 	//"fmt"
 	"github.com/gin-gonic/gin"
 	"m/routes"
-	//"m/models/contest/answer"
+	"m/controllers/contest/answer"
 )
 
 func main() {
@@ -12,7 +12,7 @@ func main() {
 	router.LoadHTMLGlob("views/*.html")
 	router.Static("/assets", "./assets")
 
-	router.POST("/answer/insert",routes.UserAnswer)
+	router.POST("/answer/insert",answer.PostAnswer)
 	router.GET("/", routes.Home)
 	router.GET("/answer", routes.Answer)
 

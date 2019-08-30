@@ -8,10 +8,11 @@ import (
 )
 
 func UserAnswer(ctx *gin.Context) {
-	qi, _ := strconv.Atoi(ctx.PostForm("questionid"))
-	ui, _ := strconv.Atoi(ctx.PostForm("userid"))
-	cn := ctx.PostForm("cookingname")
-	co := ctx.PostForm("cookingoutline")
+	ctx.Header("Access-Control-Allow-Origin", "*")
+	qi, _ := strconv.Atoi(ctx.PostForm("qi"))
+	ui, _ := strconv.Atoi(ctx.PostForm("ui"))
+	cn := ctx.PostForm("cn")
+	co := ctx.PostForm("co")
 
 	println("Answer_post")
 	println(qi)
