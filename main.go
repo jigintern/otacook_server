@@ -3,28 +3,33 @@ package main
 import (
 	//"fmt"
 	"github.com/gin-gonic/gin"
-	"m/routes"
+	// "m/routes"
 	"m/controllers/contest/answer"
+	"m/controllers/user"
 )
 
 func main() {
 	router := gin.Default()
-	router.LoadHTMLGlob("views/*.html")
 	router.Static("/assets", "./assets")
 
 	router.POST("/answer/insert",answer.PostAnswer)
-	router.GET("/", routes.Home)
-	router.GET("/answer", routes.Answer)
+	router.POST("/user/insert",user.PostUser)
 
-	user := router.Group("/user")
-	{
-		user.POST("/signup", routes.UserSignUp)
-		user.POST("/login", routes.UserLogIn)
-	}
+	// router.GET("/answer", routes.Answer)
 
-	router.GET("/login", routes.LogIn)
-	router.GET("/signup", routes.SignUp)
-	router.NoRoute(routes.NoRoute)
+	// // router.GET("/", routes.Home)
+	// // router.GET("/answer", routes.Answer)
+	// // router.GET("/user", routes.User)
+
+	// // user := router.Group("/user")
+	// // {
+	// // 	user.POST("/signup", routes.UserSignUp)
+	// // 	user.POST("/login", routes.UserLogIn)
+	// // }
+
+	// // router.GET("/login", routes.LogIn)
+	// // router.GET("/signup", routes.SignUp)
+	// router.NoRoute(routes.NoRoute)
 
 	router.Run(":8080")
 
