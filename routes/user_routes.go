@@ -3,9 +3,20 @@ package routes
 import (
 	"github.com/gin-gonic/gin"
 	"m/models/contest/answer"
+	// "m/models/user"
 	"net/http"
 	"strconv"
 )
+
+// func UserAnswer(ctx *gin.Context) {
+// 	ctx.Header("Access-Control-Allow-Origin", "*")
+// 	un := ctx.PostForm("UserName")
+// 	um := ctx.PostForm("UserMailaddress")
+// 	up := ctx.PostForm("UserPassword")
+// 	ur, _ := strconv.Atoi(ctx.PostForm("UserRated"))
+// 	user.InsertUser(un, um, up, ur)
+// 	ctx.Redirect(http.StatusSeeOther, "//localhost:8080/")
+// }
 
 func UserAnswer(ctx *gin.Context) {
 	ctx.Header("Access-Control-Allow-Origin", "*")
@@ -27,26 +38,26 @@ func UserAnswer(ctx *gin.Context) {
 
 
 
-func UserSignUp(ctx *gin.Context) {
-	println("post/signup")
-	username := ctx.PostForm("username")
-	email := ctx.PostForm("emailaddress")
-	password := ctx.PostForm("password")
-	passwordConf := ctx.PostForm("passwordconfirmation")
-	println("username: " + username)
-	println("email: " + email)
-	println("password: " + password)
-	println("passwordConf: " + passwordConf)
+// func UserSignUp(ctx *gin.Context) {
+// 	println("post/signup")
+// 	username := ctx.PostForm("username")
+// 	email := ctx.PostForm("emailaddress")
+// 	password := ctx.PostForm("password")
+// 	passwordConf := ctx.PostForm("passwordconfirmation")
+// 	println("username: " + username)
+// 	println("email: " + email)
+// 	println("password: " + password)
+// 	println("passwordConf: " + passwordConf)
 
-	ctx.Redirect(http.StatusSeeOther, "//localhost:8080/")
-}
+// 	ctx.Redirect(http.StatusSeeOther, "//localhost:8080/")
+// }
 
-func UserLogIn(ctx *gin.Context) {
-	println("post/login")
-	username := ctx.PostForm("username")
-	password := ctx.PostForm("password")
-	println("username: " + username)
-	println("password: " + password)
+// func UserLogIn(ctx *gin.Context) {
+// 	println("post/login")
+// 	username := ctx.PostForm("username")
+// 	password := ctx.PostForm("password")
+// 	println("username: " + username)
+// 	println("password: " + password)
 
-	ctx.Redirect(http.StatusSeeOther, "//localhost:8080/")
-}
+// 	ctx.Redirect(http.StatusSeeOther, "//localhost:8080/")
+// }
